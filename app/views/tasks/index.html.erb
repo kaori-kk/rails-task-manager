@@ -4,8 +4,6 @@
 <li>
   <%= link_to task.title, task_path(task) %>
   <%= task.details %>
-  <input type="checkbox" value="true">
-  <label for="completed">Completed</label>
 
   <%= link_to "UPDATE TASK", edit_task_path(task) %>
   <%= link_to "Delete Task", task_path(task),
