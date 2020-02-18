@@ -3,9 +3,17 @@
 <% @tasks.each do |task| %>
 <li>
   <%= link_to task.title, task_path(task) %>
-  <%= "#{task.details} #{task.completed}" %>
+  <%= task.details %>
+  <input type="checkbox" value="true">
+  <label for="completed">Completed</label>
+
   <%= link_to "UPDATE TASK", edit_task_path(task) %>
-  <%= link_to "DELETE TASK", delete_task_path(task) %>
+  <%= link_to "Delete Task", task_path(task),
+      method: :delete,
+      data: { confirm: "Delete this task?" } %>
+
 </li>
 <% end %>
+<%= link_to "CREATE NEW TASK", new_task_path %>
+
 
